@@ -15,7 +15,7 @@ class AnExampleTest(TestCase):
                     version
                     slug
                     abstract
-                    main_storage_size,
+                    main_storage_size
                     compressed_storage_size
                 }
             }
@@ -36,7 +36,7 @@ class AnExampleTest(TestCase):
                         version
                         slug
                         abstract
-                        main_storage_size,
+                        main_storage_size
                         compressed_storage_size
                     }
                 }
@@ -57,7 +57,7 @@ class AnExampleTest(TestCase):
                         version
                         slug
                         abstract
-                        main_storage_size,
+                        main_storage_size
                         compressed_storage_size
                     }
                 }
