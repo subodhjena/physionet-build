@@ -4,7 +4,7 @@ from export import views
 from schema import schema
 
 urlpatterns = [
-    path('graphql', GraphQLView.as_view(graphiql=True, schema=schema),
+    path('graphql', GraphQLView.as_view(graphiql=False, schema=schema),
          name='graphql'),
     path('rest/database-list/', views.database_list,
          name='database_list'),
