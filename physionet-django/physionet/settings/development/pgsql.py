@@ -7,11 +7,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'physionet',
         'USER': 'physionet',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'PASSWORD': 'physionet',
+        'HOST': 'db',
         'PORT': '',
         'TEST': {
             'MIRROR': 'default'
         }
     }
-}

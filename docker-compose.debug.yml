@@ -1,0 +1,38 @@
+version: "3.4"
+
+services:
+  db:
+    image: postgres:11.6
+    container_name: physionet_db
+    volumes:
+      - physionet_data:/var/lib/postgres/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=physionet
+      - POSTGRES_PASSWORD=physionet
+      - POSTGRES_DB=physionet
+
+  web:
+    build: .
+    image: web
+    restart: always
+    container_name: physionet
+    environment:
+      - DJANGO_SECRET_KEY=local
+    volumes:
+      - ./:/app
+    ports:
+      - 8000:8000
+      - 5678:5678
+    depends_on:
+      - db
+    command:
+      [
+        "sh",
+        "-c",
+        "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 physionet-django/manage.py runserver 0.0.0.0:8000 --nothreading --noreload",
+      ]
+
+volumes:
+  physionet_data:
