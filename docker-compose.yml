@@ -31,7 +31,7 @@ services:
       [
         "sh",
         "-c",
-        "python physionet-django/manage.py runserver 0.0.0.0:8000 --nothreading --noreload",
+        "python physionet-django/manage.py runserver 0.0.0.0:8000",
       ]
 
 volumes:
