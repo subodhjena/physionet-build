@@ -19,6 +19,7 @@ google-api-python-client==1.7.9
 
 #### Required for postgresql database backend ####
 psycopg2-binary==2.8.6
+dj-database-url==0.5.0
 
 #### Requirements for development and testing ####
 coverage==4.4.2

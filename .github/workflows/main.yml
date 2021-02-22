@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches: [feature/docker-support]
+  pull_request:
+    branches: [feature/docker-support]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login to Heroku Container registry
+        run: heroku container:login
+
+      - name: Build and push
+        run: heroku container:push -a physionet web
+
+      - name: Release
+        run: heroku container:release -a physionet web
