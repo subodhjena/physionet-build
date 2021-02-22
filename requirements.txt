@@ -88,3 +88,7 @@ cryptography==2.7
 # required by google-api-python-client 1.7.9
 uritemplate==3.0.0 
 google-auth-httplib2==0.0.3
+
+
+# static hosting
+whitenoise==5.2.0
