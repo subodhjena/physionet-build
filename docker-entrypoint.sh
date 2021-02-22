@@ -12,7 +12,6 @@ set -e
 echo >&2 "Runing post container scripts"
 
 # python wait_for_postgres.py &&
-./physionet-django/manage.py migrate
-# && python ./physionet-django/manage.py collectstatic --noinput
+./physionet-django/manage.py migrate && python ./physionet-django/manage.py collectstatic --noinput
 
 exec "$@"
